@@ -6,7 +6,7 @@ class RegistroTiendaSerializer(serializers.ModelSerializer):
     class Meta:
         model = RegistroTienda
         fields = (
-            'RegistroTiendaId'
+            'RegistroTiendaId',
             'id_vendedor',
             'id_comprador',
             'titulo_producto',
@@ -16,5 +16,5 @@ class RegistroTiendaSerializer(serializers.ModelSerializer):
             'estado_envio',
             'estado_recibido',
             'estado_pago_shopken',
-            'id_registro_token'
+            'RegistroTokenId'
         )

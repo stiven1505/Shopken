@@ -1,11 +1,13 @@
 
-from django.urls import re_path
+from django.urls import path
+from . import views
 
-from LoginAPP import views
+urlpatterns = [
+    # Ruta para iniciar sesión
+    path('login/', views.iniciar_sesion, name='login'),
 
-urlpatterns=[
-    re_path(r'^usuarios$',views.usuariosApi),
-    re_path(r'^usuarios/([0-9]+)$',views.usuariosApi),
+    # Ruta para registrar un nuevo usuario
+    path('registro/', views.registro, name='registro'),
 
     # Otras rutas de tu aplicación
 ]

@@ -22,18 +22,7 @@ from cryptography.fernet import Fernet
 import base64
 
 
-# Configuración de la clave y salt
-""" SECRET_KEY = config('SECRET_KEY')
-SALT = config('SALT')      
 
-# Deriva la clave usando PBKDF2HMAC
-kdf = PBKDF2HMAC(
-    algorithm=hashes.SHA256(),
-    iterations=100000,
-    salt=SALT.encode('utf-8'),
-    length=32,
-)
-key = base64.urlsafe_b64encode(kdf.derive(SECRET_KEY.encode('utf-8'))) """
 
 
 #CONFIGURACION DE SESIONES
@@ -80,6 +69,13 @@ INSTALLED_APPS = [
 ]
 #modificar
 CORS_ORIGIN_ALLOW_ALL= True
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+]
+AUTH_USER_MODEL = 'LoginAPP.CustomUser'
+
+
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',

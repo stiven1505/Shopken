@@ -76,7 +76,7 @@ def tokenApi(request, id=0):
         #Insertar registros en la tabla
         elif request.method == 'POST':
             #configuracion para encriptar cantidad 
-            clave_cifrado = Fernet.generate_key()
+            clave_cifrado = Fernet(settings.SECRET_KEY.encode())
             f = Fernet(clave_cifrado)
 
             id_usuario = request.POST.get('id_usuario')
